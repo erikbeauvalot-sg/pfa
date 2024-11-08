@@ -239,7 +239,7 @@ const TransactionManagement = () => {
               <td>{transaction.description}</td>
               <td>{accounts.find(account => account.id === transaction.accountId)?.name}</td>
               <td>{categories.find(category => category.id === transaction.categoryId)?.name}</td>
-              <td>{transaction.executAt}</td>
+              <td>{transaction.executAt.split('T')[0]}</td>
               <td>{transaction.createdAt}</td>
               <td>{transaction.updatedAt}</td>
               <td>

@@ -13,10 +13,16 @@ import categoryRoutes from './routes/category.routes.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-dotenv.config();
+console.log("NODE_ENV : ", process.env.NODE_ENV);
+console.log("load .env.",process.env.NODE_ENV);
+
+dotenv.config({ path: '.env.${process.env.NODE_ENV}'});
+
+console.log("SERVER_PORT : ", process.env.SERVER_PORT);
 
 const app = express();
 const prisma = new PrismaClient();
+
 const PORT = process.env.SERVER_PORT || 5000;
 
 // Configuration des middlewares dans le bon ordre

@@ -47,7 +47,7 @@ router.put('/:username', async (req, res) => {
       data.password = await bcrypt.hash(password, 10); // Hacher le mot de passe avant de le stocker
     }
 
-    console.log('data', data);
+    // console.log('data', data);
 
     const updatedUser = await prisma.user.update({
       where: { name: username },

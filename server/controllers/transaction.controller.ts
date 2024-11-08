@@ -17,6 +17,8 @@ export const transactionController = {
 
   async createTransaction(req: Request, res: Response) {
     const { amount, type, description, accountId, categoryId, executAt, active } = req.body;
+    const f_executAt = new Date(executAt).toISOString();
+
     console.log('body:', req.body);
 
     try {
@@ -27,7 +29,7 @@ export const transactionController = {
           description,
           accountId,
           categoryId,
-          executAt,
+          executAt: f_executAt,
           active
         },
       });

@@ -1,4 +1,8 @@
 .env
+.env.test
+.env.testing
+.env.production
+
 node_modules
 
 /prisma/.env
